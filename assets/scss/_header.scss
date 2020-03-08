@@ -1,0 +1,147 @@
+.header-wrap {
+  background: #3e3d32;
+  
+  header {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    
+    .logo-wrap, .nav {
+      flex: 0 0 100%;
+      align-items: center;
+    }
+    
+    .logo-wrap {
+      margin-bottom: 1rem;
+      
+      .logo {
+        line-height: 1;
+
+        a {
+          @include heading-styles( 4rem, #fd971f );
+
+          color: $header-color;
+          text-decoration: none;
+        }
+
+      }
+
+      em {
+        font-size: 0.75rem;
+      }
+    }
+    
+    .nav {
+      text-align: center;
+      display: flex;
+
+      nav {
+        flex: 0 0 50%;
+        position: relative;
+
+        &:before {
+          content: "\f0c9";
+          @extend %fa;
+          font-size: 2rem;
+          color: #75715e;
+        }
+
+        // Burger menu active fns
+        &:hover {
+          &:before {
+            color: #fff;
+          }
+
+          > ul {
+            display: block;
+          }
+
+          li {
+            &:hover {
+              ul {
+                display: block;
+              }
+            }
+          }
+        }
+
+        h2 {
+          display: none;
+        }
+
+        // Generic UL LI A styles
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            white-space: nowrap;
+
+            a {
+              background: #75715e;
+              display: block;
+              width: 100%;
+              padding: 0 0.5rem;
+              line-height: 1.5;
+              box-sizing: border-box;
+
+              &[aria-haspopup=true] {
+                &:after {
+                  @extend %fa;
+                  margin: 0 0 0 0.25rem;
+                  content: "\f054";
+                  font-size: 0.75rem;
+                }
+              }
+            }
+
+            ul {
+              width: 100%;
+            }
+          }
+        }
+
+        // Burger menu passive fns
+        > ul {
+          display: none;
+          position: absolute;
+          top: 100%;
+
+          li {
+            position: relative;
+            
+            > ul {
+              display: none;
+              position: absolute;
+              z-index: 100;
+              left: 100%;
+              top: 0;
+            }
+          }
+        }
+      }
+
+      .social-media {
+        flex: 0 0 50%;
+
+        a {
+          margin: 0 0.5rem;
+          font-size: 2rem;
+        }
+      }
+
+    }
+  }
+}
+
+@media ( min-width: $desktop-bp ) {
+  .header-wrap {
+    header {
+      width: $desktop-container-width;
+    }
+  }
+}

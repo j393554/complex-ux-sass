@@ -1,0 +1,49 @@
+.main-wrap {
+    main {
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+}
+
+.snail-mail {
+    position: relative;
+
+    &:before {
+        content: "\f0e0";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        display: inline-block;
+        animation: move ease infinite 6s;
+        position: absolute;
+    }
+    &:after {
+        content: "\00a0";
+        display: inline-block;
+    }
+}
+
+.robot {
+    i {
+        color: #f00;
+        animation: rainbow ease infinite 1s;
+    }
+}
+
+.social-media {
+    flex-grow: 1;
+}
+.copyright {
+    flex-grow: 1;
+    align-self: center;
+    text-align: right;
+}
+
+@media ( min-width: $desktop-bp ) {
+    .main-wrap {
+        main {
+            width: $desktop-container-width;
+        }
+    }
+}

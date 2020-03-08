@@ -1,0 +1,49 @@
+@keyframes rainbow {
+    0% {
+      color: #f00;
+    }
+    20% {
+      color: #ff0;
+    }
+    40% {
+      color: #0f0;
+    }
+    50% {
+      color: #0ff;
+    }
+    60% {
+      color: #00f;
+    }
+    80% {
+      color: #f0f;
+    }
+    100% {
+      color: #f00;
+    }
+}
+
+@keyframes move {
+  0% { 
+    transform: scale(1) rotate(0deg);
+    left: 0px;
+  }
+  25% {
+    transform: scale(2) rotate(360deg);
+    left: 100px;
+    content: "\f2b6";
+  }
+  50% { 
+    transform: scale(3) rotate(720deg);
+    left: 300px;
+    content: "\f658";
+  }
+  75% {
+    transform: scale(2) rotate(360deg);
+    left: 100px;
+    content: "\f2b6";
+  }
+  100% { 
+    transform: scale(1) rotate(0deg);
+    left: 0px;
+  }
+}

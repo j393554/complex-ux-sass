@@ -1,0 +1,74 @@
+body {
+    background: #272822;
+    font-family: $text-font;
+    color: $text-color;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: $header-color;
+}
+
+h1 {
+    @include heading-styles( 4rem, #ae81ff );
+}
+
+h2 {
+    @include heading-styles( 2rem, #a6e22e );
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: $anchor-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $anchor-hover-color;
+    }
+
+    &.sm-icon {
+        i {
+            color: #75715e;
+        }
+
+        &:hover {
+            i {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+time {
+    color: #fd5ff0;
+}
+
+@media ( min-width: $desktop-bp ) {
+    h1 {
+        font-size: 5rem;
+    }
+}
