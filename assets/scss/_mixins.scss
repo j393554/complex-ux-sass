@@ -1,6 +1,6 @@
 @mixin heading-styles( $size: 5rem, $span-color: false ) {
   font-size: $size;
-  font-family: $header-font;
+  font-family: $heading-font;
 
   @if $span-color {
     span {

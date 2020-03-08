@@ -1,49 +1,122 @@
 .main-wrap {
-    main {
-        padding: 1rem;
-        width: 100%;
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
+	min-height: 80vh;
+
+	main {
+		padding: 1rem;
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0 auto;
+	}
 }
 
-.snail-mail {
-    position: relative;
+main {
+	article {
+		border-bottom: double #75715e;
+		margin-bottom: 1rem;
 
-    &:before {
-        content: "\f0e0";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        display: inline-block;
-        animation: move ease infinite 6s;
-        position: absolute;
-    }
-    &:after {
-        content: "\00a0";
-        display: inline-block;
-    }
+		&:last-of-type {
+			border-bottom: none;
+			margin-bottom: 0;
+
+			blockquote {
+				& + address {
+					margin: 0;
+				}
+			}
+		}
+
+		blockquote {
+			background: #3e3d32;
+			font-size: 1rem;
+			font-style: italic;
+			text-align: center;
+			text-shadow: 2px 2px #272822;
+			padding: 3rem 1rem;
+			margin: 0;
+			margin-bottom: 1rem;
+			border-radius: 10px;
+			position: relative;
+
+			&::before {
+				@extend %fa;
+				content: "\f10e";
+
+				@extend %blockquote-quotes;
+				right: 0;
+				bottom: 0;
+			}
+			&::after {
+				@extend %fa;
+				content: "\f10d";
+
+				@extend %blockquote-quotes;
+				left: 0;
+				top: 0;
+			}
+
+			& + address {
+				margin-bottom: 1rem;
+			}
+
+			img {
+				max-width: 100%;
+				max-height: 90vh;
+			}
+
+			p {
+				margin-bottom: 1rem;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	
+	.snail-mail {
+		position: relative;
+		
+		&:before {
+			content: "\f0e0";
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			display: inline-block;
+			animation: move ease infinite 6s;
+			position: absolute;
+		}
+		&:after {
+			content: "\00a0";
+			display: inline-block;
+		}
+	}
+	
+	.robot {
+		i {
+			color: #f00;
+			animation: rainbow ease infinite 1s;
+		}
+	}
 }
 
-.robot {
-    i {
-        color: #f00;
-        animation: rainbow ease infinite 1s;
-    }
-}
-
-.social-media {
-    flex-grow: 1;
-}
-.copyright {
-    flex-grow: 1;
-    align-self: center;
-    text-align: right;
+@media ( min-width: $tablet-bp ) {
+	.main-wrap {
+		main {
+			width: $tablet-container-width;
+		}
+	}
 }
 
 @media ( min-width: $desktop-bp ) {
-    .main-wrap {
-        main {
-            width: $desktop-container-width;
-        }
-    }
+	.main-wrap {
+		main {
+			width: $desktop-container-width;
+
+			article {
+				blockquote {
+					font-size: 2.5rem;
+					padding: 3rem;
+				}
+			}
+		}
+	}
 }

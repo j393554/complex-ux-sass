@@ -19,18 +19,18 @@
       
       .logo {
         line-height: 1;
+        margin: 0;
 
         a {
           @include heading-styles( 4rem, #fd971f );
 
-          color: $header-color;
+          color: $heading-color;
           text-decoration: none;
         }
 
-      }
-
-      em {
-        font-size: 0.75rem;
+        & ~ em {
+          font-size: 0.75rem;
+        }
       }
     }
     
@@ -52,7 +52,7 @@
         // Burger menu active fns
         &:hover {
           &:before {
-            color: #fff;
+            color: #f8f8f2;
           }
 
           > ul {
@@ -61,6 +61,10 @@
 
           li {
             &:hover {
+              > a {
+                color: $anchor-hover-color;
+              }
+
               ul {
                 display: block;
               }
@@ -84,7 +88,6 @@
             a {
               background: #75715e;
               display: block;
-              width: 100%;
               padding: 0 0.5rem;
               line-height: 1.5;
               box-sizing: border-box;
@@ -110,6 +113,8 @@
           display: none;
           position: absolute;
           top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
 
           li {
             position: relative;
@@ -136,6 +141,92 @@
 
     }
   }
+}
+
+@media ( min-width: $tablet-bp ) {
+  .header-wrap {
+    header {
+      width: $tablet-container-width;
+      text-align: initial;
+      
+      .logo-wrap, .nav {
+        margin: 0;
+        flex: initial;
+        flex-grow: 1;
+        align-self: center;
+      }
+
+      .logo-wrap {
+        .logo {
+          a {
+            font-size: 5rem;
+            font-weight: bolder;
+          }
+
+          & ~ em {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .nav {
+        display: block;
+        text-align: right;
+
+        nav {
+          &:before {
+            display: none;
+          }
+
+          > ul {
+            display: block;
+            position: static;
+            transform: none;
+
+            > li {
+              display: inline-block;
+              margin: 0 0.25rem;
+
+              &:last-child {
+                margin-right: 0;
+              }
+              > a {
+                background: none;
+              }
+            }
+
+            li {
+              ul {
+                left: auto;
+                right: 0;
+                top: 100%;
+
+                li {
+                  a {
+                    padding: 0 0.5rem;
+                  }
+                }
+              }
+            }
+          }
+
+          ul {
+            li {
+              a {
+                padding: 0;
+              }
+            }
+          }
+        }
+
+        .social-media {
+          a {
+            margin: 0;
+          }
+        }
+      }
+		}
+	}
 }
 
 @media ( min-width: $desktop-bp ) {
