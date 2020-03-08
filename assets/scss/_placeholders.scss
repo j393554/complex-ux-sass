@@ -1,12 +1,12 @@
-// %icon {
-//   color: #75715e;
-//   font-size: 1rem;
-//   margin: 1rem;
-
-//   @extend %fa;
-// }
-
 %fa {
   font-family: $fa-font;
   font-weight: bold;
+}
+
+%blockquote-quotes {
+  color: #75715e;
+  font-size: 1rem;
+  text-shadow: none;
+  position: absolute;
+  margin: 1rem;
 }

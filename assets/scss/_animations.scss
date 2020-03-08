@@ -1,27 +1,23 @@
+$rainbow-frame-map: (
+  0: #f00,
+  20: #ff0,
+  40: #0f0,
+  50: #0ff,
+  60: #00f,
+  80: #f0f,
+  100: #f00
+);
+
+// Change text color to the rainbow spectrum (see $rainbow-frame-map)
 @keyframes rainbow {
-    0% {
-      color: #f00;
+  @each $frame, $color in $rainbow-frame-map {
+    #{$frame}% {
+      color: $color;
     }
-    20% {
-      color: #ff0;
-    }
-    40% {
-      color: #0f0;
-    }
-    50% {
-      color: #0ff;
-    }
-    60% {
-      color: #00f;
-    }
-    80% {
-      color: #f0f;
-    }
-    100% {
-      color: #f00;
-    }
+  }
 }
 
+// To be used as an animation for a "mail" icon rotating horizontally, each stop changes the icon
 @keyframes move {
   0% { 
     transform: scale(1) rotate(0deg);
